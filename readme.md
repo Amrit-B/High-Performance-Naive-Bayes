@@ -17,7 +17,7 @@ Tested on the 20 Newsgroups dataset (approx. 18,000 documents, 20 classes).
 
 ## Due to repository size limits, the **20 Newsgroups** dataset is not included in the source tree. 
 
-1. Download the dataset from the [original archive](https://qwone.com/~jason/20Newsgroups/20news-18828.tar.gz).
+1. Download the dataset from the [CMU Archive (HTTPS)](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz).
 2. Extract the contents.
 3. Rename the folder to `20_newsgroups` and place it in the project root.
 
