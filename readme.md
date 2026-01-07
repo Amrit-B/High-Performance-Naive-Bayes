@@ -15,10 +15,9 @@ The core logic replaces Python loops with linear algebra primitives to ensure sc
 ## Performance Benchmarks
 Tested on the 20 Newsgroups dataset (approx. 18,000 documents, 20 classes).
 
-## Due to repository size limits, the **20 Newsgroups** dataset is not included in the source tree. 
 
 ##  Dataset Setup
-This project uses the **20 Newsgroups (18828 version)** dataset. The data is not included in the repo to maintain a lightweight footprint.
+This project uses the **20 Newsgroups (18828 version)** dataset. The data is not included in the repo due to repository size limits.
 
 1. **Download:** [Click here to download the dataset](http://qwone.com/~jason/20Newsgroups/20news-18828.tar.gz).
    * *Note: If your browser blocks the download due to HTTP, right-click the link and select "Save Link As...", or allow the download in your security settings.*
