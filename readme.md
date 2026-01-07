@@ -21,10 +21,9 @@ This project uses the **20 Newsgroups (18828 version)** dataset. The data is not
 
 1. **Download:** [Click here to download the dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz).
 2. **Extract:** Unzip the contents.
-3. **Rename:** Rename the extracted folder `20news-18828` to `20_newsgroups`.
+3. **Rename:** Make sure the folder name is `20_newsgroups`.
 4. **Place:** Move the folder to the project root.
-2. Extract the contents.
-3. Rename the folder to `20_newsgroups` and place it in the project root.
+
 
 | Metric | Result | Note |
 | :--- | :--- | :--- |
