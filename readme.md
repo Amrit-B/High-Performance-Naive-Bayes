@@ -25,7 +25,7 @@ Tested on the 20 Newsgroups dataset (approx. 18,000 documents, 20 classes).
 | :--- | :--- | :--- |
 | **Accuracy** | 83.49% | Matches Scikit-Learn baseline |
 | **Vocabulary Size** | ~17,900 | Filtered (min_freq=10) |
-| **Execution Time** | ~47s | End-to-end (Load + Train + Inference) | (Time varies for every run)
+| **Execution Time** | ~47s | End-to-end (Load + Train + Inference) | 
 
 ## Usage
 
