@@ -19,7 +19,7 @@ Tested on the 20 Newsgroups dataset (approx. 18,000 documents, 20 classes).
 ##  Dataset Setup
 This project uses the **20 Newsgroups (18828 version)** dataset. The data is not included in the repo due to repository size limits.
 
-1. **Download:** [Click here to download the dataset](http://qwone.com/~jason/20Newsgroups/20news-18828.tar.gz).
+1. **Download:** [Click here to download the dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz).
    * *Note: If your browser blocks the download due to HTTP, right-click the link and select "Save Link As...", or allow the download in your security settings.*
 2. **Extract:** Unzip the contents.
 3. **Rename:** Rename the extracted folder `20news-18828` to `20_newsgroups`.
