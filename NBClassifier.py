@@ -33,7 +33,7 @@ def tokenize(text):
     return re.findall(r'[a-zA-Z]+', text.lower())
 
 class MultinomialNB:
-    def __init__(self, min_freq=5):
+    def __init__(self, min_freq=VOCAB_MIN_FREQUENCY):
         self.min_freq = min_freq
         self.vocab = {}
         self.class_map = {}
@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
     train_data, test_data, classes = load_data(DATASET_PATH)
 
-    model = MultinomialNB(min_freq=VOCAB_MIN_FREQUENCY)
+    model = MultinomialNB
     model.train(train_data, classes)
 
     test_contents = [t[0] for t in test_data]
