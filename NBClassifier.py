@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
     train_data, test_data, classes = load_data(DATASET_PATH)
 
-    model = MultinomialNB
+    model = MultinomialNB()
     model.train(train_data, classes)
 
     test_contents = [t[0] for t in test_data]
