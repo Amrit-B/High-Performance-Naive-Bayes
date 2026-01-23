@@ -1,5 +1,4 @@
 # Naive Bayes Text Classifier
-**ML Project 2 - Masters Sem 4**
 
 ## What This Project Does
 
