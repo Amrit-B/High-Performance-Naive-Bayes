@@ -1,50 +1,88 @@
-# High-Performance Naive Bayes Classifier
+# Naive Bayes Text Classifier
+**ML Project 2 - Masters Sem 4**
 
-## Overview
-This repository contains a high-throughput Multinomial Naive Bayes inference engine designed for text classification on the 20 Newsgroups dataset.
+## What This Project Does
 
-Unlike standard iterative implementations, this project utilizes NumPy vectorization and broadcasting to perform training and inference as dense matrix operations, reducing CPU overhead and execution time.
+This is a text classification system that automatically categorizes news articles into 20 different topics (sports, technology, politics, religion, etc.) using the **Multinomial Naive Bayes** algorithm.
 
-## Technical Implementation
-The core logic replaces Python loops with linear algebra primitives to ensure scalability:
+The classifier learns patterns from training articles and then predicts categories for new articles based on word frequencies.
 
-- **Vectorized Inference:** Computes posterior probabilities using matrix multiplication rather than iterative lookups.
-- **Log-Space Arithmetic:** Implements log-likelihood accumulation to prevent floating-point underflow on high-dimensional sparse vectors.
-- **O(1) Class Lookup:** Uses optimized index mapping for constant-time label retrieval during batch prediction.
+## How It Works
 
-## Performance Benchmarks
-Tested on the 20 Newsgroups dataset (approx. 18,000 documents, 20 classes).
+1. **Training Phase:** 
+   - Reads 500 articles from each of the 20 categories
+   - Counts word frequencies in each category
+   - Calculates probabilities using Bayes theorem
 
+2. **Testing Phase:**
+   - Takes new articles it hasn't seen before
+   - Compares word patterns to what it learned
+   - Predicts the most likely category
 
-##  Dataset Setup
-This project uses the **20 Newsgroups (18828 version)** dataset. The data is not included in the repo due to repository size limits.
+3. **Key Features:**
+   - Uses NumPy for efficient matrix operations
+   - Implements log probabilities to avoid numerical underflow
+   - Filters vocabulary to only include frequently occurring words
 
-1. **Download:** [Click here to download the dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz).
-2. **Extract:** Unzip the contents.
-3. **Rename:** Make sure the folder name is `20_newsgroups`.
-4. **Place:** Move the folder to the project root.
+## Dataset Setup
 
+This project uses the **20 Newsgroups** dataset, which is NOT included in this repo.
 
-| Metric | Result | Note |
-| :--- | :--- | :--- |
-| **Accuracy** | 83.49% | Matches Scikit-Learn baseline |
-| **Vocabulary Size** | ~17,900 | Filtered (min_freq=10) |
-| **Execution Time** | ~47s | End-to-end (Load + Train + Inference) | 
+**To get the dataset:**
+1. Download: [20 Newsgroups dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz)
+2. Extract the archive
+3. Make sure the extracted folder is named `20_newsgroups`
+4. Place it in the project root directory
 
-## Usage
+## Installation & Running
 
-### Prerequisites
+**Requirements:**
 - Python 3.8+
 - NumPy
 
-### Installation
+**Install dependencies:**
+```bash
 pip install -r requirements.txt
+```
 
-### Execution
-python NBClassifier.py
+**Run the classifier:**
+```bash
+python main.py
+```
+
+## Results
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | ~83% |
+| Vocabulary Size | ~17,900 words |
+| Training Set | 10,000 documents (500 per class) |
+| Test Set | ~8,828 documents |
+| Execution Time | ~47 seconds |
 
 ## Project Structure
-- NBClassifier.py: The vectorized implementation
-- 20_newsgroups/: Dataset directory
-- requirements.txt: Dependencies
-- README.md: Documentation
+
+```
+├── main.py              # Main execution script with configuration
+├── naive_bayes.py       # MultinomialNB classifier implementation
+├── data_loader.py       # Data loading and tokenization functions
+├── requirements.txt     # Python dependencies
+├── NBClassifier.py      # Original single-file implementation
+└── 20_newsgroups/       # Dataset directory (not included)
+```
+
+## What I Learned
+
+- How Naive Bayes works for text classification
+- The importance of log probabilities for numerical stability
+- Using NumPy for efficient vectorized operations
+- Handling text encoding issues (latin-1 for older datasets)
+- Balancing code modularity vs simplicity
+- Why sorting file lists matters for reproducibility
+
+## Notes
+
+- The "naive" assumption treats words as independent, which isn't technically true but works well in practice
+- Laplace smoothing (+1 to all counts) prevents zero probabilities
+- Words appearing less than 10 times are filtered out to reduce noise
+- You can adjust `VOCAB_MIN_FREQUENCY` in main.py to experiment with different vocabulary sizes
